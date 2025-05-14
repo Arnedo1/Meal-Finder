@@ -1,9 +1,16 @@
 import { useState } from 'react'
 import loop from '../assets/loop.svg'
 
-export default function Header() {
+export default function Header(props) {
     const [ change, setChange ] = useState( '' )
 
+const fetchData = async () => {
+    const response = await fetch(`${props.url}${change}`);
+    const data = await response.json();
+    console.log(data);
+}
+
+    
     const firstCap = ( str ) => {
         if ( !str ) { return '' }
         return str[ 0 ].toUpperCase() + str.slice( 1 )
@@ -11,6 +18,7 @@ export default function Header() {
     const clickedEnter = ( e ) => {
         if ( e.key === 'Enter' ) {
             e.preventDefault()
+            fetchData()
             console.log( { change } )
             setChange( '' )
         }
