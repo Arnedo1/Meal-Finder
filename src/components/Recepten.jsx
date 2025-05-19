@@ -4,8 +4,7 @@ export default function Recepten(props) {
         // Responsive grid layout that adjusts columns based on screen size
         // - 1 column on mobile (default)
         // - 2 columns on small screens (sm)
-        // - 3 columns on medium and large screens (md, lg)
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 container max-w-[1000px] mx-auto p-5 pb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 container max-w-[300px] sm:max-w-[600px] mx-auto p-5 pb-20">
             {/* ===== CONDITIONAL RENDERING OF RECIPES ===== */}
             {/* Only renders if props.data exists and contains meals array */}
             {props.data && props.data.meals ? 
