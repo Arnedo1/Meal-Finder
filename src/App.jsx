@@ -1,12 +1,19 @@
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, HashRouter, Navigate } from "react-router-dom";
 import Home from "./pages";
-Home
+import Favorieten from "./pages/favorieten";
+import Boodschappenlijst from "./pages/boodschappenlijst";
+import NavBar from "./components/NavBar";
+
 export default function App() {
-  return(
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />}/>
-    </Routes>
-    </BrowserRouter>
-  )
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/index" replace />} />
+        <Route path="/index" element={<Home />} />
+        <Route path="/favorieten" element={<Favorieten />} />
+        <Route path="/boodschappenlijst" element={<Boodschappenlijst />} />
+      </Routes>
+      <NavBar />
+    </HashRouter>
+  );
 }
