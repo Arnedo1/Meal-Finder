@@ -139,7 +139,7 @@ export default function Home() {
                         By Letter
                     </button>
                 </div>
-                <h1 className="text-center text-2xl font-bold pt-5 text-blue-500 mb-6">Looking for inspiration?</h1>
+                <h1 className="text-center text-2xl font-bold pt-5 text-blue-500 mb-2">Looking for inspiration?</h1>
                 {/* ===== CONDITIONAL RENDERING: LOADING OR RECIPES ===== */}
                 {/* Shows loading animation or recipe list based on loading state */}
                 { loading === true
